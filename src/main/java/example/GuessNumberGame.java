@@ -17,7 +17,7 @@ public class GuessNumberGame {
         for (char c : answerCharArray) {
             answerGridSet.add(c);
         }
-        times=0;
+        times = 0;
     }
 
     public String guess(String guess) {
