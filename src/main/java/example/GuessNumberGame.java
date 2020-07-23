@@ -7,12 +7,14 @@ public class GuessNumberGame {
 
     private final String answer;
     final Set<Character> answerGridSet;
+    char[] answerCharArray;
 
     public GuessNumberGame(String answer) {
         this.answer = answer;
         answerGridSet = new HashSet<>();
-        for (int i = 0; i < answer.length(); i++) {
-            answerGridSet.add(answer.charAt(i));
+        answerCharArray = answer.toCharArray();
+        for (char c : answerCharArray) {
+            answerGridSet.add(c);
         }
     }
 
@@ -20,11 +22,15 @@ public class GuessNumberGame {
 
         if (guess.equals(answer)) return "4A0B";
         int rightNumberNum = 0;
-        for (int i = 0; i < guess.length(); i++) {
-            if (answerGridSet.contains(guess.charAt(i)))
+        int rightPositionNum = 0;
+        char[] guessCharArray = guess.toCharArray();
+        for (int i = 0; i < guessCharArray.length; i++) {
+            if (answerGridSet.contains(guessCharArray[i]))
                 rightNumberNum++;
+            if (answerCharArray[i] == guessCharArray[i]) rightPositionNum++;
         }
         if (rightNumberNum == 0) return "0A0B";
-        return "2A2B";
+        if (rightNumberNum == 4 && rightPositionNum == 0) return "0A4B";
+        return  "2A2B"  ;
     }
 }
