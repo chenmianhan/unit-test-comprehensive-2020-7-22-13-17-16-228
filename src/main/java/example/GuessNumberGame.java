@@ -10,7 +10,7 @@ public class GuessNumberGame {
     char[] answerCharArray;
 
     public GuessNumberGame(AnswerGenerator answerGenerator) {
-        this.answer = answerGenerator.genereate();
+        this.answer = answerGenerator.generate();
         answerGridSet = new HashSet<>();
         answerCharArray = answer.toCharArray();
         for (char c : answerCharArray) {
