@@ -115,5 +115,22 @@ public class GuessNumberGameTest {
         //then
         assertEquals("Wrong Input,Input again", guessNumberGame.guess(guess));
     }
+    @Test
+    void should_return_times_used_up_when_answer_is_1234_when_given_more_than_six_guess() {
+        //given
+        String guess = "1243";
+
+        //when
+        AnswerGenerator mockAnswerGenerator= Mockito.mock(AnswerGenerator.class);
+        given(mockAnswerGenerator.generate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(mockAnswerGenerator);
+        String lastTimesOutput="";
+        for (int i = 0; i <7 ; i++) {
+            lastTimesOutput=guessNumberGame.guess(guess);
+        }
+
+        //then
+        assertEquals("Times used up", lastTimesOutput);
+    }
 
 }
