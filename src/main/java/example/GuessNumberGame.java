@@ -19,8 +19,11 @@ public class GuessNumberGame {
     }
 
     public String guess(String guess) {
+        return generateOutput(guess);
 
-        if (guess.equals(answer)) return "4A0B";
+    }
+
+    private String generateOutput(String guess) {
         int rightNumberNum = 0;
         int rightPositionNum = 0;
         char[] guessCharArray = guess.toCharArray();
@@ -29,9 +32,6 @@ public class GuessNumberGame {
                 rightNumberNum++;
             if (answerCharArray[i] == guessCharArray[i]) rightPositionNum++;
         }
-        if (rightNumberNum == 0) return "0A0B";
-        if (rightNumberNum == 4 && rightPositionNum == 0) return "0A4B";
         return String.format("%sA%sB", rightPositionNum, rightNumberNum - rightPositionNum);
-
     }
 }
