@@ -9,8 +9,8 @@ public class GuessNumberGame {
     final Set<Character> answerGridSet;
     char[] answerCharArray;
 
-    public GuessNumberGame(String answer) {
-        this.answer = answer;
+    public GuessNumberGame(AnswerGenerator answerGenerator) {
+        this.answer = answerGenerator.genereate();
         answerGridSet = new HashSet<>();
         answerCharArray = answer.toCharArray();
         for (char c : answerCharArray) {

@@ -1,8 +1,10 @@
 package example;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.BDDMockito.given;
 
 public class GuessNumberGameTest {
     @Test
@@ -11,7 +13,9 @@ public class GuessNumberGameTest {
         String guess = "1234";
 
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
+        AnswerGenerator mockAnswerGenerator= Mockito.mock(AnswerGenerator.class);
+        given(mockAnswerGenerator.genereate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(mockAnswerGenerator);
 
         //then
         assertEquals("4A0B", guessNumberGame.guess(guess));
@@ -23,7 +27,9 @@ public class GuessNumberGameTest {
         String guess = "1243";
 
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
+        AnswerGenerator mockAnswerGenerator= Mockito.mock(AnswerGenerator.class);
+        given(mockAnswerGenerator.genereate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(mockAnswerGenerator);
 
         //then
         assertEquals("2A2B", guessNumberGame.guess(guess));
@@ -35,7 +41,9 @@ public class GuessNumberGameTest {
         String guess = "5678";
 
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
+        AnswerGenerator mockAnswerGenerator= Mockito.mock(AnswerGenerator.class);
+        given(mockAnswerGenerator.genereate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(mockAnswerGenerator);
 
         //then
         assertEquals("0A0B", guessNumberGame.guess(guess));
@@ -46,7 +54,9 @@ public class GuessNumberGameTest {
         String guess = "4321";
 
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
+        AnswerGenerator mockAnswerGenerator= Mockito.mock(AnswerGenerator.class);
+        given(mockAnswerGenerator.genereate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(mockAnswerGenerator);
 
         //then
         assertEquals("0A4B", guessNumberGame.guess(guess));
@@ -57,7 +67,9 @@ public class GuessNumberGameTest {
         String guess = "1025";
 
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
+        AnswerGenerator mockAnswerGenerator= Mockito.mock(AnswerGenerator.class);
+        given(mockAnswerGenerator.genereate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(mockAnswerGenerator);
 
         //then
         assertEquals("1A1B", guessNumberGame.guess(guess));
@@ -69,7 +81,9 @@ public class GuessNumberGameTest {
         String guess = "2107";
 
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
+        AnswerGenerator mockAnswerGenerator= Mockito.mock(AnswerGenerator.class);
+        given(mockAnswerGenerator.genereate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(mockAnswerGenerator);
 
         //then
         assertEquals("0A2B", guessNumberGame.guess(guess));
