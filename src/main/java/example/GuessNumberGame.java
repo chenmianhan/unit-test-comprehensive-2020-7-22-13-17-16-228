@@ -31,6 +31,7 @@ public class GuessNumberGame {
         }
         if (rightNumberNum == 0) return "0A0B";
         if (rightNumberNum == 4 && rightPositionNum == 0) return "0A4B";
-        return  "2A2B"  ;
+        return String.format("%sA%sB", rightPositionNum, rightNumberNum - rightPositionNum);
+
     }
 }
