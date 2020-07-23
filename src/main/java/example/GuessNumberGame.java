@@ -17,7 +17,7 @@ public class GuessNumberGame {
             answerGridSet.add(c);
         }
     }
-
+//    public
     public String guess(String guess) {
         return generateOutput(guess);
 
@@ -34,4 +34,5 @@ public class GuessNumberGame {
         }
         return String.format("%sA%sB", rightPositionNum, rightNumberNum - rightPositionNum);
     }
+
 }
