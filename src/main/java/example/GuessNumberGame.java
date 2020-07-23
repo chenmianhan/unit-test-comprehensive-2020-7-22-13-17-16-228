@@ -17,9 +17,10 @@ public class GuessNumberGame {
             answerGridSet.add(c);
         }
     }
-//    public
+
     public String guess(String guess) {
-        return generateOutput(guess);
+        if(!checkInput(guess))return "Wrong Input,Input again";
+        else  return generateOutput(guess);
 
     }
 
@@ -34,5 +35,16 @@ public class GuessNumberGame {
         }
         return String.format("%sA%sB", rightPositionNum, rightNumberNum - rightPositionNum);
     }
-
+    private boolean checkInput(String guess){
+        Set<Character> checkSet=new HashSet<>();
+        char[]guessCharArray=guess.toCharArray();
+        for (char guessGrid:guessCharArray) {
+            if(!checkSet.contains(guessGrid))
+            {
+                checkSet.add(guessGrid);
+            }
+            else return false;
+        }
+        return true;
+    }
 }

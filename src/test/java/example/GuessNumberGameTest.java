@@ -102,4 +102,5 @@ public class GuessNumberGameTest {
         //then
         assertEquals("Wrong Input,Input again", guessNumberGame.guess(guess));
     }
+
 }
