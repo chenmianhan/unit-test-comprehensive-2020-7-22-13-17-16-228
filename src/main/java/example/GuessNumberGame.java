@@ -8,6 +8,7 @@ public class GuessNumberGame {
     private final String answer;
     final Set<Character> answerGridSet;
     char[] answerCharArray;
+    static int times;
 
     public GuessNumberGame(AnswerGenerator answerGenerator) {
         this.answer = answerGenerator.generate();
@@ -25,6 +26,7 @@ public class GuessNumberGame {
     }
 
     private String generateOutput(String guess) {
+        times++;
         int rightNumberNum = 0;
         int rightPositionNum = 0;
         char[] guessCharArray = guess.toCharArray();
@@ -36,6 +38,7 @@ public class GuessNumberGame {
         return String.format("%sA%sB", rightPositionNum, rightNumberNum - rightPositionNum);
     }
     private boolean checkInput(String guess){
+        if(guess.length()!=4)return false;
         Set<Character> checkSet=new HashSet<>();
         char[]guessCharArray=guess.toCharArray();
         for (char guessGrid:guessCharArray) {
