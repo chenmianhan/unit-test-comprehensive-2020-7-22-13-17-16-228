@@ -11,7 +11,7 @@ public class GuessNumberGameTest {
         String guess = "1234";
 
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame();
+        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
 
         //then
         assertEquals("4A0B", guessNumberGame.guess(guess));
@@ -19,10 +19,10 @@ public class GuessNumberGameTest {
 
     @Test
     void should_return_2A2B_when_answer_is_1234_when_given_1243() {
-        String guess = "1234";
+        String guess = "1243";
 
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame();
+        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
 
         //then
         assertEquals("2A2B", guessNumberGame.guess(guess));
