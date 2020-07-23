@@ -19,6 +19,7 @@ public class GuessNumberGameTest {
 
     @Test
     void should_return_2A2B_when_answer_is_1234_when_given_1243() {
+        //given
         String guess = "1243";
 
         //when
@@ -26,5 +27,17 @@ public class GuessNumberGameTest {
 
         //then
         assertEquals("2A2B", guessNumberGame.guess(guess));
+    }
+
+    @Test
+    void should_return_0A0B_when_answer_is_1234_when_given_5678() {
+        //given
+        String guess = "5678";
+
+        //when
+        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
+
+        //then
+        assertEquals("0A0B", guessNumberGame.guess(guess));
     }
 }
