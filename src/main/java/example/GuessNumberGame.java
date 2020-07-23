@@ -8,7 +8,7 @@ public class GuessNumberGame {
     private final String answer;
     final Set<Character> answerGridSet;
     char[] answerCharArray;
-    static int times;
+    int times;
 
     public GuessNumberGame(AnswerGenerator answerGenerator) {
         this.answer = answerGenerator.generate();
@@ -17,11 +17,13 @@ public class GuessNumberGame {
         for (char c : answerCharArray) {
             answerGridSet.add(c);
         }
+        times=0;
     }
 
     public String guess(String guess) {
-        if(!checkInput(guess))return "Wrong Input,Input again";
-        else  return generateOutput(guess);
+        if (times >= 6) return "Times used up";
+        if (!checkInput(guess)) return "Wrong Input,Input again";
+        else return generateOutput(guess);
 
     }
 
@@ -37,16 +39,15 @@ public class GuessNumberGame {
         }
         return String.format("%sA%sB", rightPositionNum, rightNumberNum - rightPositionNum);
     }
-    private boolean checkInput(String guess){
-        if(guess.length()!=4)return false;
-        Set<Character> checkSet=new HashSet<>();
-        char[]guessCharArray=guess.toCharArray();
-        for (char guessGrid:guessCharArray) {
-            if(!checkSet.contains(guessGrid))
-            {
+
+    private boolean checkInput(String guess) {
+        if (guess.length() != 4) return false;
+        Set<Character> checkSet = new HashSet<>();
+        char[] guessCharArray = guess.toCharArray();
+        for (char guessGrid : guessCharArray) {
+            if (!checkSet.contains(guessGrid)) {
                 checkSet.add(guessGrid);
-            }
-            else return false;
+            } else return false;
         }
         return true;
     }
