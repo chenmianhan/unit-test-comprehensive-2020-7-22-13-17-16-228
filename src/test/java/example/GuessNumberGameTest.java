@@ -40,4 +40,5 @@ public class GuessNumberGameTest {
         //then
         assertEquals("0A0B", guessNumberGame.guess(guess));
     }
+
 }
