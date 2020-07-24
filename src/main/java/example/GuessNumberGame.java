@@ -28,13 +28,11 @@ public class GuessNumberGame {
     }
 
     private String generateOutput(String guess) {
-        times++;
         int rightNumberNum = 0;
         int rightPositionNum = 0;
         char[] guessCharArray = guess.toCharArray();
         for (int i = 0; i < guessCharArray.length; i++) {
-            if (answerGridSet.contains(guessCharArray[i]))
-                rightNumberNum++;
+            if (answerGridSet.contains(guessCharArray[i])) rightNumberNum++;
             if (answerCharArray[i] == guessCharArray[i]) rightPositionNum++;
         }
         return String.format("%sA%sB", rightPositionNum, rightNumberNum - rightPositionNum);
