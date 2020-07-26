@@ -6,9 +6,9 @@ import java.util.Set;
 public class GuessNumberGame {
 
     private final String answer;
-    final Set<Character> answerGridSet;
-    char[] answerCharArray;
-    int times;
+    private final Set<Character> answerGridSet;
+    private char[] answerCharArray;
+    private int times;
 
     public GuessNumberGame(AnswerGenerator answerGenerator) {
         this.answer = answerGenerator.generate();
@@ -21,7 +21,6 @@ public class GuessNumberGame {
     }
 
     public String guess(String guess) {
-        if (times >= 6) return "Times used up";
         if (!checkInput(guess)) return "Wrong Input,Input again";
         else return generateOutput(guess);
 
