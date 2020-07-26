@@ -20,7 +20,7 @@ class ValidatorTest {
     }
 
     @Test
-    void should_return_false_when_digit_is_not_unique_given() {
+    void should_return_false_when_digit_is_not_unique_given_1123() {
         //given
         String number = "1123";
         Validator figureUniqueValidator = new FigureUniqueValidator();
