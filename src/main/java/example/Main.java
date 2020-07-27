@@ -3,6 +3,9 @@ package example;
 import java.util.Scanner;
 
 public class Main {
+
+    private static final String RIGHT_GUESS_RESULT = "4A0B";
+
     public static void main(String[]args){
         GuessNumberGame guessNumberGame=new GuessNumberGame(new RandomAnswerGenerator());
         System.out.println("Game Start!");
@@ -16,7 +19,7 @@ public class Main {
             String guessResult = guessNumberGame.guess(guess.toString());
             System.out.println(guessResult);
             curTime++;
-            if (guessResult.equals("4A0B")) break;
+            if (guessResult.equals(RIGHT_GUESS_RESULT)) break;
         }
         if (curTime == maxTimes) System.out.println("Game Over!");
 
