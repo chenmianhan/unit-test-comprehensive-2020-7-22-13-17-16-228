@@ -7,6 +7,7 @@ public class Main {
     private static final String RIGHT_GUESS_RESULT = "4A0B";
     private static final String GAME_START = "Game Start!";
     private static final String GAME_OVER = "Game Over!";
+    private static final int NUMBER_LENGTH = 4;
 
     public static void main(String[]args){
         GuessNumberGame guessNumberGame=new GuessNumberGame(new RandomAnswerGenerator());
@@ -15,7 +16,7 @@ public class Main {
         while (curTime < maxTimes) {
             Scanner guessScanner = new Scanner(System.in);
             StringBuilder guess= new StringBuilder();
-            for (int i = 0; i <4 ; i++) {
+            for (int i = 0; i < NUMBER_LENGTH; i++) {
                 guess.append(guessScanner.nextInt());
             }
             String guessResult = guessNumberGame.guess(guess.toString());
