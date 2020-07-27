@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class Main {
 
     private static final String RIGHT_GUESS_RESULT = "4A0B";
+    private static final String GAME_START = "Game Start!";
 
     public static void main(String[]args){
         GuessNumberGame guessNumberGame=new GuessNumberGame(new RandomAnswerGenerator());
-        System.out.println("Game Start!");
+        System.out.println(GAME_START);
         int maxTimes = 6, curTime = 0;
         while (curTime < maxTimes) {
             Scanner guessScanner = new Scanner(System.in);
