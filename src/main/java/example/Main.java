@@ -6,6 +6,7 @@ public class Main {
 
     private static final String RIGHT_GUESS_RESULT = "4A0B";
     private static final String GAME_START = "Game Start!";
+    private static final String GAME_OVER = "Game Over!";
 
     public static void main(String[]args){
         GuessNumberGame guessNumberGame=new GuessNumberGame(new RandomAnswerGenerator());
@@ -22,7 +23,7 @@ public class Main {
             curTime++;
             if (guessResult.equals(RIGHT_GUESS_RESULT)) break;
         }
-        if (curTime == maxTimes) System.out.println("Game Over!");
+        if (curTime == maxTimes) System.out.println(GAME_OVER);
 
     }
 }
