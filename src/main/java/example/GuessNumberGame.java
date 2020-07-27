@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class GuessNumberGame {
 
+    private static final String WRONG_INPUT_OUTPUT = "Wrong Input,Input again";
     private final Set<Character> answerDigitSet;
     private char[] answerCharArray;
 
@@ -18,7 +19,8 @@ public class GuessNumberGame {
     }
 
     public String guess(String guess) {
-        if (!checkInput(guess)) return "Wrong Input,Input again";
+        if (!checkInput(guess)) return WRONG_INPUT_OUTPUT;
+
         else return generateOutput(guess);
 
     }
