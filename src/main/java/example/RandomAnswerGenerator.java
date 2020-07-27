@@ -1,8 +1,12 @@
 package example;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class RandomAnswerGenerator implements AnswerGenerator {
+
+    private static final int NUMBER_LENGTH = 4;
 
     @Override
     public String generate() {
@@ -12,7 +16,7 @@ public class RandomAnswerGenerator implements AnswerGenerator {
             numberS.add(i);
         }
        Collections.shuffle(numberS);
-        for (int i = 0; i <4 ; i++) {
+        for (int i = 0; i < NUMBER_LENGTH; i++) {
             result.append(numberS.get(i));
         }
         return result.toString();
