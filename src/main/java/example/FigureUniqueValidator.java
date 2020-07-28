@@ -10,11 +10,11 @@ public class FigureUniqueValidator implements Validator {
     @Override
     public boolean isValid(String number) {
         if (number.length() != VALIDATE_NUMBER_LENGTH) return false;
-        Set<Character> digitSet = new HashSet<>();
+        Set<Character> digits = new HashSet<>();
         for (Character digit : number.toCharArray()) {
-            digitSet.add(digit);
+            digits.add(digit);
         }
-        return digitSet.size() == VALIDATE_NUMBER_LENGTH;
+        return digits.size() == VALIDATE_NUMBER_LENGTH;
     }
 
 }
