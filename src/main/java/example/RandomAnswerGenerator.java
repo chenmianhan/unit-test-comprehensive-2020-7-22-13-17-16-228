@@ -10,8 +10,10 @@ public class RandomAnswerGenerator implements AnswerGenerator {
 
     @Override
     public String generate() {
+        //TODO NAMING
         StringBuilder result= new StringBuilder();
         List<Integer> numberS=new ArrayList<>(10);
+        //TODO i,10
         for (int i = 0; i <10 ; i++) {
             numberS.add(i);
         }

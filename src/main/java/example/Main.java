@@ -12,10 +12,12 @@ public class Main {
     public static void main(String[]args){
         GuessNumberGame guessNumberGame=new GuessNumberGame(new RandomAnswerGenerator());
         System.out.println(GAME_START);
+        //TODO CurTime
         int maxTimes = 6, curTime = 0;
         while (curTime < maxTimes) {
             Scanner guessScanner = new Scanner(System.in);
             StringBuilder guess= new StringBuilder();
+            //TODO i
             for (int i = 0; i < NUMBER_LENGTH; i++) {
                 guess.append(guessScanner.nextInt());
             }
