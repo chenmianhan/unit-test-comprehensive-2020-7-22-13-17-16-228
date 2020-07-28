@@ -13,8 +13,8 @@ public class Main {
         GuessNumberGame guessNumberGame=new GuessNumberGame(new RandomAnswerGenerator());
         System.out.println(GAME_START);
         //TODO CurTime
-        int maxTimes = 6, curTime = 0;
-        while (curTime < maxTimes) {
+        int maxTimes = 6, time = 0;
+        while (time < maxTimes) {
             Scanner guessScanner = new Scanner(System.in);
             StringBuilder guess= new StringBuilder();
             //TODO i
@@ -23,10 +23,10 @@ public class Main {
             }
             String guessResult = guessNumberGame.guess(guess.toString());
             System.out.println(guessResult);
-            curTime++;
+            time++;
             if (guessResult.equals(RIGHT_GUESS_RESULT)) break;
         }
-        if (curTime == maxTimes) System.out.println(GAME_OVER);
+        if (time == maxTimes) System.out.println(GAME_OVER);
 
     }
 }
