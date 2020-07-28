@@ -12,7 +12,6 @@ public class Main {
     public static void main(String[]args){
         GuessNumberGame guessNumberGame=new GuessNumberGame(new RandomAnswerGenerator());
         System.out.println(GAME_START);
-        //TODO CurTime
         int maxTimes = 6, time = 0;
         while (time < maxTimes) {
             Scanner guessScanner = new Scanner(System.in);
